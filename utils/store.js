@@ -16,10 +16,19 @@ export const StoreProvider = ({ children }) => {
     status: "",
   });
   const [posts, setPosts] = useState([]);
+  /* Arreglo para las categorias de los articulos buscados con la cantidad de elementos para cada uno
+  [
+    { name: "cat1", cant: 2 },
+    { name: "cat2", cant: 5 },
+  ];
+  */
+  const [categories, setCategories] = useState([]);
 
   const value = {
     search,
     setSearch,
+    categories,
+    setCategories,
     searchResult,
     setSearchResult,
     posts,
