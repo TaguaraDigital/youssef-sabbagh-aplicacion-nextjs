@@ -1,4 +1,4 @@
-export const questionsAnswers = [
+export const faqs = [
   {
     id: "01",
     question: "1. Pagina principal",

@@ -1,16 +1,59 @@
-.faq {
-  width: 70%;
-  margin-top: 2rem;
-  margin-left: auto;
-  margin-right: auto;
+.container {
+  max-width: 600px;
+  margin: 6rem auto 4rem;
+  padding: 0 10px;
 }
 
-.title {
-  font-size: 1.3rem;
-  font-weight: bold;
+.heading {
+  font-size: 23px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
-.text {
-  font-size: 1rem;
-  line-height: 1.5;
-  letter-spacing: 1px;
+
+.accordion {
+  list-style: none;
+}
+
+.accordion_item {
+  border-top: 1px solid var(--bgDarkClr);
+
+  .button {
+    font-size: 16px;
+    background-color: var(--mainClr);
+    color: var(--bgClr);
+    text-align: left;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8px;
+    cursor: pointer;
+    border: none;
+  }
+
+  &.active {
+    .button {
+      background-color: var(--mainAltClr);
+    }
+  }
+}
+
+.control {
+  font-size: 20px;
+}
+
+.answer_wrapper {
+  height: 0;
+  overflow: hidden;
+
+  .answer {
+    background-color: var(--bgLightClr);
+    padding: 20px;
+  }
+
+  &.open {
+    height: 100px;
+  }
 }

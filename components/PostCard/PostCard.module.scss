@@ -13,8 +13,7 @@
   &:focus,
   &:active {
     transform: scale(0.95);
-    color: #1270f3;
-    border-color: #1270f3;
+    color: var(--mainAltClr);
   }
 
   .title {

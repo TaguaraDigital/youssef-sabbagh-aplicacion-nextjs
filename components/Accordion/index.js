@@ -1,30 +1,28 @@
 import { useState } from "react";
-import AccordionItem from "./AccordionItem";
-import { questionsAnswers } from "./questionAnswerdata";
-
+import { faqs } from "./faqs";
 import styles from "./Accordion.module.scss";
 
+import AccordionItem from "./AccordionItem";
+
 const Accordion = () => {
-  const [activeIndex, setActiveIndex] = useState(1);
-
+  const [clicked, setClicked] = useState("0");
+  const handleToggle = (index) => {
+    if (clicked === index) {
+      return setClicked("0");
+    }
+    setClicked(index);
+  };
   return (
-    <div className={styles.faq}>
-      {questionsAnswers.map((question, index) => {
-        const showDescription = index === activeIndex ? "show-description" : "";
-        const fontWeightBold = index === activeIndex ? "font-weight-bold" : "";
-        const ariaExpanded = index === activeIndex ? "true" : "false";
-
-        return (
-          <AccordionItem
-            key={question.id}
-            item={question}
-            onClick={() => {
-              setActiveIndex(index);
-            }}
-          />
-        );
-      })}
-    </div>
+    <ul className={styles.accordion}>
+      {faqs.map((faq, index) => (
+        <AccordionItem
+          key={faq.id}
+          faq={faq}
+          onToggle={() => handleToggle(index)}
+          active={clicked === index}
+        />
+      ))}
+    </ul>
   );
 };
 

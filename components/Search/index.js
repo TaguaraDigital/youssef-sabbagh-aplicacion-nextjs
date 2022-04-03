@@ -13,7 +13,7 @@ const Search = () => {
     if (searchLocal === "") {
       alert("debe indicar el criterio de busqueda");
     } else {
-      setSearch({ ...search, word: searchLocal, orderby });
+      setSearch({ ...search, word: searchLocal, orderby, currentPage: 1 });
     }
   };
 
